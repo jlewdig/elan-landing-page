@@ -1,0 +1,1537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ÉLAN — New Homes in Warner | AVID Property Group</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide-core.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  /* ══════════════════════════════════════════
+     GLOBAL RESET & VARIABLES
+     ══════════════════════════════════════════ */
+  *,*::before,*::after { margin:0; padding:0; box-sizing:border-box; }
+
+  :root {
+    --elan-teal: #1a5c56;
+    --elan-teal-deep: #0e3d3a;
+    --elan-teal-dark: #0b2e2b;
+    --elan-teal-bright: #00a499;
+    --elan-dark-green: #003d4c;
+    --elan-cream: #f0e8db;
+    --elan-cream-light: #f5f0e8;
+    --elan-cream-warm: #faf7f2;
+    --elan-amber: #e8a54b;
+    --elan-amber-hover: #d4923d;
+    --elan-terracotta: #d4824a;
+    --elan-terracotta-hover: #c06f38;
+    --elan-text-dark: #1a3a38;
+    --elan-text-muted: #5a7a78;
+    --elan-text-light: #5a5a5a;
+    --elan-border: #e0dbd3;
+    --elan-border-light: #c5bfb3;
+    --elan-white: #ffffff;
+    --elan-blue-gray: #768692;
+    --elan-light-blue-gray: #b9d3dc;
+
+    --font-display: 'Cormorant Garamond', Georgia, serif;
+    --font-body: 'DM Sans', 'Helvetica Neue', Arial, sans-serif;
+
+    --section-pad-y: clamp(3.5rem, 7vw, 5.5rem);
+    --section-pad-x: clamp(1.25rem, 5vw, 4rem);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font-body);
+    color: var(--elan-text-dark);
+    background: var(--elan-cream-light);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  img { display: block; max-width: 100%; height: auto; }
+
+
+  /* ══════════════════════════════════════════
+     SECTION 1 — HERO
+     ══════════════════════════════════════════ */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    overflow: hidden;
+  }
+
+  .hero__bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+
+  .hero__bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 40%;
+  }
+
+  .hero__overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background:
+      linear-gradient(to top,
+        rgba(11, 46, 43, 0.97) 0%,
+        rgba(11, 46, 43, 0.92) 12%,
+        rgba(11, 46, 43, 0.80) 24%,
+        rgba(11, 46, 43, 0.58) 38%,
+        rgba(11, 46, 43, 0.30) 52%,
+        rgba(11, 46, 43, 0.10) 65%,
+        rgba(11, 46, 43, 0.0) 78%
+      ),
+      linear-gradient(to bottom,
+        rgba(11, 46, 43, 0.45) 0%,
+        rgba(11, 46, 43, 0.15) 12%,
+        rgba(11, 46, 43, 0.0) 22%
+      );
+  }
+
+  .hero__top {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    z-index: 3;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: clamp(20px, 3vh, 32px) clamp(24px, 5vw, 64px);
+  }
+
+  .hero__logo {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: clamp(24px, 3vw, 32px);
+    letter-spacing: 0.15em;
+    color: var(--elan-cream);
+    text-transform: uppercase;
+    text-decoration: none;
+    text-shadow: 0 1px 8px rgba(11, 46, 43, 0.5), 0 2px 20px rgba(11, 46, 43, 0.3);
+  }
+
+  .hero__location {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    font-weight: 500;
+    color: rgba(240, 232, 219, 0.85);
+    text-shadow: 0 1px 6px rgba(11, 46, 43, 0.5);
+  }
+
+  .hero__location svg {
+    width: 14px; height: 14px;
+    color: var(--elan-amber);
+    filter: drop-shadow(0 1px 3px rgba(11, 46, 43, 0.4));
+  }
+
+  .hero__content {
+    position: relative;
+    z-index: 2;
+    padding: 0 clamp(24px, 5vw, 64px) clamp(44px, 7vh, 72px);
+    max-width: 640px;
+  }
+
+  .hero__eyebrow {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 400;
+    font-size: clamp(16px, 2vw, 20px);
+    color: var(--elan-amber);
+    margin-bottom: 8px;
+    text-shadow: 0 1px 6px rgba(11, 46, 43, 0.4);
+    animation: fadeUp 0.7s ease-out both;
+  }
+
+  .hero__headline {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: clamp(34px, 5.5vw, 56px);
+    line-height: 1.1;
+    color: var(--elan-white);
+    margin-bottom: 16px;
+    letter-spacing: -0.01em;
+    text-shadow: 0 2px 12px rgba(11, 46, 43, 0.4), 0 1px 3px rgba(11, 46, 43, 0.2);
+    animation: fadeUp 0.7s ease-out 0.1s both;
+  }
+
+  .hero__sub {
+    font-size: clamp(14.5px, 1.6vw, 17px);
+    line-height: 1.6;
+    color: rgba(240, 232, 219, 0.88);
+    max-width: 480px;
+    margin-bottom: 10px;
+    text-shadow: 0 1px 4px rgba(11, 46, 43, 0.3);
+    animation: fadeUp 0.7s ease-out 0.2s both;
+  }
+
+  .hero__price {
+    font-size: clamp(14px, 1.4vw, 15px);
+    font-weight: 500;
+    color: var(--elan-amber);
+    margin-bottom: clamp(24px, 4vh, 36px);
+    text-shadow: 0 1px 4px rgba(11, 46, 43, 0.3);
+    animation: fadeUp 0.7s ease-out 0.28s both;
+  }
+
+  .hero__cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--elan-amber);
+    color: var(--elan-teal-dark);
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 15px;
+    padding: 16px 36px;
+    border: none;
+    border-radius: 32px;
+    cursor: pointer;
+    text-decoration: none;
+    box-shadow: 0 4px 20px rgba(11, 46, 43, 0.3);
+    transition: background 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease;
+    animation: fadeUp 0.7s ease-out 0.38s both;
+  }
+
+  .hero__cta:hover {
+    background: var(--elan-amber-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 28px rgba(11, 46, 43, 0.35);
+  }
+
+  .hero__cta svg {
+    width: 16px; height: 16px;
+    transition: transform 0.25s ease;
+  }
+
+  .hero__cta:hover svg { transform: translateX(3px); }
+
+  .hero__disclaimer {
+    position: absolute;
+    bottom: clamp(16px, 2vh, 24px);
+    right: clamp(24px, 5vw, 64px);
+    z-index: 2;
+    font-size: 11px;
+    color: rgba(240, 232, 219, 0.3);
+    font-style: italic;
+    text-shadow: 0 1px 4px rgba(11, 46, 43, 0.4);
+  }
+
+
+  /* ══════════════════════════════════════════
+     TRUST STRIP
+     ══════════════════════════════════════════ */
+  .trust-strip {
+    display: flex;
+    flex-wrap: wrap;
+    background: var(--elan-teal-deep);
+  }
+
+  .trust-strip__item {
+    flex: 1 1 33.333%;
+    min-width: 220px;
+    padding: 22px clamp(20px, 3vw, 36px);
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    border-right: 1px solid rgba(240, 232, 219, 0.06);
+  }
+
+  .trust-strip__item:last-child { border-right: none; }
+
+  .trust-strip__icon {
+    flex-shrink: 0;
+    width: 32px; height: 32px;
+    border-radius: 50%;
+    background: rgba(240, 232, 219, 0.07);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1px;
+  }
+
+  .trust-strip__icon svg {
+    width: 15px; height: 15px;
+    color: var(--elan-amber);
+  }
+
+  .trust-strip__text {
+    font-size: 13px;
+    line-height: 1.5;
+    color: rgba(240, 232, 219, 0.55);
+  }
+
+  .trust-strip__text strong {
+    display: block;
+    font-weight: 500;
+    font-size: 13.5px;
+    color: var(--elan-cream);
+    margin-bottom: 2px;
+  }
+
+
+  /* ══════════════════════════════════════════
+     SECTION 2 — SLIDER
+     ══════════════════════════════════════════ */
+  .slider-section {
+    background: var(--elan-cream);
+    padding: var(--section-pad-y) 0;
+    overflow: hidden;
+  }
+
+  .slider-section__inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 var(--section-pad-x);
+  }
+
+  .slider-section__header {
+    text-align: center;
+    margin-bottom: clamp(2rem, 4vw, 3rem);
+  }
+
+  .slider-section__eyebrow {
+    display: inline-block;
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--elan-teal-bright);
+    margin-bottom: 0.75rem;
+  }
+
+  .slider-section__title {
+    font-family: var(--font-display);
+    font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+    font-weight: 500;
+    color: var(--elan-dark-green);
+    line-height: 1.2;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .elan-slider { position: relative; }
+  .elan-slider .splide__track { padding: 0 2.5rem; }
+
+  @media (max-width: 767px) {
+    .elan-slider .splide__track { padding: 0; }
+  }
+
+  .slide-card {
+    background: var(--elan-white);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+    transition: box-shadow 0.35s ease, transform 0.35s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .slide-card:hover {
+    box-shadow: 0 8px 32px rgba(0,0,0,0.10);
+    transform: translateY(-4px);
+  }
+
+  .slide-card__image-wrap {
+    position: relative;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+
+  .slide-card__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+  }
+
+  .slide-card:hover .slide-card__image { transform: scale(1.04); }
+
+  .slide-card__image-wrap::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 40%;
+    background: linear-gradient(to top, rgba(0,0,0,0.15), transparent);
+    pointer-events: none;
+  }
+
+  .slide-card__body {
+    padding: clamp(1.25rem, 2.5vw, 1.75rem);
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+
+  .slide-card__heading {
+    font-family: var(--font-display);
+    font-size: clamp(1.15rem, 2vw, 1.4rem);
+    font-weight: 600;
+    color: var(--elan-dark-green);
+    line-height: 1.25;
+    margin-bottom: 0.6rem;
+  }
+
+  .slide-card__text {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: var(--elan-text-light);
+    flex-grow: 1;
+    margin-bottom: 1.25rem;
+  }
+
+  .slide-card__cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--elan-terracotta);
+    text-decoration: none;
+    transition: gap 0.25s ease, color 0.25s ease;
+  }
+
+  .slide-card__cta:hover {
+    gap: 0.7rem;
+    color: var(--elan-terracotta-hover);
+  }
+
+  .slide-card__cta svg {
+    width: 16px; height: 16px;
+    flex-shrink: 0;
+    transition: transform 0.25s ease;
+  }
+
+  .slide-card__cta:hover svg { transform: translateX(2px); }
+
+  /* Slider arrows */
+  .elan-slider .splide__arrows {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .elan-slider .splide__arrow {
+    pointer-events: auto;
+    background: var(--elan-white);
+    border: 1.5px solid var(--elan-border);
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    position: relative;
+    z-index: 10;
+  }
+
+  .elan-slider .splide__arrow:hover {
+    background: var(--elan-dark-green);
+    border-color: var(--elan-dark-green);
+  }
+
+  .elan-slider .splide__arrow svg {
+    width: 18px; height: 18px;
+    fill: none;
+    stroke: var(--elan-dark-green);
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: stroke 0.25s ease;
+  }
+
+  .elan-slider .splide__arrow:hover svg { stroke: var(--elan-white); }
+  .elan-slider .splide__arrow--prev { margin-left: -6px; }
+  .elan-slider .splide__arrow--prev svg { transform: scaleX(-1); }
+  .elan-slider .splide__arrow--next { margin-right: -6px; }
+  .elan-slider .splide__arrow:disabled { opacity: 0.3; cursor: default; }
+
+  @media (max-width: 767px) {
+    .elan-slider .splide__arrows { display: none; }
+  }
+
+  .elan-slider .splide__pagination {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: clamp(1.5rem, 3vw, 2rem);
+    padding: 0;
+    list-style: none;
+  }
+
+  .elan-slider .splide__pagination__page {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    border: 1.5px solid var(--elan-teal-bright);
+    background: transparent;
+    cursor: pointer;
+    padding: 0;
+    transition: all 0.3s ease;
+  }
+
+  .elan-slider .splide__pagination__page:hover { background: rgba(0, 164, 153, 0.3); }
+
+  .elan-slider .splide__pagination__page.is-active {
+    background: var(--elan-teal-bright);
+    transform: scale(1.2);
+  }
+
+  .swipe-hint {
+    display: none;
+    text-align: center;
+    margin-top: 0.75rem;
+    font-size: 0.75rem;
+    color: var(--elan-text-light);
+    opacity: 0.6;
+  }
+
+  @media (max-width: 767px) {
+    .swipe-hint { display: block; }
+  }
+
+
+  /* ══════════════════════════════════════════
+     SECTION 3 — FORM + BROCHURE (COMBINED)
+     Feedback #2: Booklet + checklist placed 
+     alongside the form as a value reinforcement
+     ══════════════════════════════════════════ */
+  .register-section {
+    background: var(--elan-white);
+    padding: var(--section-pad-y) var(--section-pad-x);
+  }
+
+  .register-section__inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .register-section__header {
+    text-align: center;
+    margin-bottom: clamp(2rem, 4vw, 3rem);
+  }
+
+  .register-section__eyebrow {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--elan-teal-bright);
+    margin-bottom: 12px;
+  }
+
+  .register-section__title {
+    font-family: var(--font-display);
+    font-size: clamp(28px, 4vw, 42px);
+    font-weight: 500;
+    color: var(--elan-dark-green);
+    line-height: 1.15;
+  }
+
+  .register-section__subtitle {
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--elan-blue-gray);
+    max-width: 520px;
+    margin: 12px auto 0;
+  }
+
+  .register-layout {
+    display: grid;
+    grid-template-columns: 1.15fr 1fr;
+    gap: clamp(2.5rem, 5vw, 4rem);
+    align-items: start;
+  }
+
+  /* Left column — Value prop with brochure */
+  .register-value {
+    padding-top: 0.5rem;
+  }
+
+  .register-value__booklet {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    margin-bottom: 2rem;
+  }
+
+  .register-value .brochure-3d {
+    flex-shrink: 0;
+    width: 185px;
+    perspective: 1000px;
+  }
+
+  .register-value .brochure-book {
+    position: relative;
+    width: 185px; height: 240px;
+    transform: rotateY(-18deg) rotateX(3deg);
+    transform-style: preserve-3d;
+    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .register-value .brochure-book:hover { transform: rotateY(-8deg) rotateX(1deg); }
+
+  .brochure-cover {
+    position: absolute;
+    width: 100%; height: 100%;
+    border-radius: 2px 8px 8px 2px;
+    overflow: hidden;
+    box-shadow: 10px 10px 30px rgba(0,0,0,0.22), 2px 2px 8px rgba(0,0,0,0.1),
+      inset 0 0 0 1px rgba(255,255,255,0.1);
+  }
+
+  .brochure-cover-image {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .brochure-top-bar {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    padding: 10px 12px;
+    background: linear-gradient(to bottom, rgba(0,61,76,0.7) 0%, transparent 100%);
+    z-index: 2;
+  }
+
+  .brochure-avid-mark {
+    font-size: 7px; font-weight: 700;
+    letter-spacing: 2px;
+    color: rgba(255,255,255,0.85);
+    text-transform: uppercase;
+  }
+
+  .brochure-cover-overlay {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    padding: 16px 14px 14px;
+    background: linear-gradient(to top, rgba(0,61,76,0.92) 0%, rgba(0,61,76,0.7) 60%, transparent 100%);
+    z-index: 2;
+  }
+
+  .brochure-cover-title {
+    font-family: var(--font-display);
+    font-size: 15px; font-weight: 600;
+    color: white;
+    line-height: 1.2;
+    margin-bottom: 4px;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+  }
+
+  .brochure-cover-divider {
+    width: 24px; height: 1.5px;
+    background: var(--elan-teal-bright);
+    margin: 6px 0;
+    border-radius: 1px;
+  }
+
+  .brochure-cover-sub {
+    font-size: 7px; font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.8);
+  }
+
+  .brochure-pages {
+    position: absolute;
+    right: -4px; top: 3px;
+    width: 7px;
+    height: calc(100% - 6px);
+    background: repeating-linear-gradient(180deg, #f8f8f4 0px, #f8f8f4 2px, #eeeee8 2px, #eeeee8 3px);
+    border-radius: 0 2px 2px 0;
+    box-shadow: 3px 2px 6px rgba(0,0,0,0.1);
+  }
+
+  .brochure-shadow {
+    position: absolute;
+    bottom: -12px; left: 10px; right: -2px;
+    height: 14px;
+    background: radial-gradient(ellipse at center, rgba(0,0,0,0.14) 0%, transparent 70%);
+    filter: blur(3px);
+  }
+
+  .register-value__checklist-title {
+    font-family: var(--font-display);
+    font-size: 18px; font-weight: 600;
+    color: var(--elan-dark-green);
+    margin-bottom: 12px;
+    line-height: 1.3;
+  }
+
+  .register-value__checklist {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 2rem;
+  }
+
+  .register-value__checklist li {
+    font-size: 14px;
+    color: var(--elan-text-dark);
+    padding: 7px 0 7px 28px;
+    position: relative;
+    line-height: 1.4;
+  }
+
+  .register-value__checklist li::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 10px;
+    width: 18px; height: 18px;
+    border-radius: 50%;
+    background: rgba(0, 164, 153, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .register-value__checklist li::after {
+    content: '✓';
+    position: absolute;
+    left: 3px; top: 8px;
+    font-size: 13px; font-weight: 700;
+    color: var(--elan-teal-bright);
+  }
+
+  /* Urgency / scarcity nudge — Feedback #4 */
+  .register-value__urgency {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    background: rgba(0, 164, 153, 0.06);
+    border-left: 3px solid var(--elan-teal-bright);
+    padding: 14px 16px;
+    border-radius: 0 6px 6px 0;
+  }
+
+  .register-value__urgency svg {
+    width: 18px; height: 18px;
+    flex-shrink: 0;
+    color: var(--elan-teal-bright);
+    margin-top: 1px;
+  }
+
+  .register-value__urgency p {
+    font-size: 13.5px;
+    line-height: 1.5;
+    color: var(--elan-text-dark);
+  }
+
+  .register-value__urgency strong {
+    font-weight: 600;
+  }
+
+  /* Right column — The form */
+  .register-form {
+    background: var(--elan-cream-warm);
+    border-radius: 10px;
+    padding: clamp(24px, 3vw, 36px);
+    box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+    border: 1px solid rgba(0,0,0,0.04);
+  }
+
+  .register-form__heading {
+    font-family: var(--font-display);
+    font-size: clamp(20px, 2.5vw, 24px);
+    font-weight: 500;
+    color: var(--elan-text-dark);
+    text-align: center;
+    margin-bottom: 24px;
+  }
+
+  .field-row {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+
+  .field {
+    flex: 1;
+    margin-bottom: 16px;
+  }
+
+  .field-row .field { margin-bottom: 0; }
+
+  .register-form label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--elan-text-dark);
+    margin-bottom: 6px;
+  }
+
+  .register-form label .req { color: #8b2332; }
+
+  .register-form input[type="text"],
+  .register-form input[type="email"],
+  .register-form input[type="tel"],
+  .register-form select {
+    width: 100%;
+    height: 44px;
+    padding: 0 12px;
+    font-family: var(--font-body);
+    font-size: 14px;
+    color: #333;
+    background: var(--elan-white);
+    border: 1px solid var(--elan-border-light);
+    border-radius: 4px;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+
+  .register-form input:focus,
+  .register-form select:focus {
+    border-color: var(--elan-text-dark);
+  }
+
+  .register-form select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23999' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    padding-right: 32px;
+    color: #999;
+  }
+
+  .register-form select.has-value { color: #333; }
+
+  .privacy-section {
+    margin-top: 20px;
+    padding-top: 16px;
+    border-top: 1px solid #e5e0d8;
+  }
+
+  .privacy-label {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--elan-text-dark);
+    margin-bottom: 10px;
+  }
+
+  .privacy-label .req { color: #8b2332; }
+
+  .checkbox-wrapper {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    cursor: pointer;
+  }
+
+  .checkbox-wrapper input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 20px; height: 20px;
+    min-width: 20px;
+    border: 2px solid var(--elan-border-light);
+    border-radius: 3px;
+    background: var(--elan-white);
+    cursor: pointer;
+    margin-top: 1px;
+    position: relative;
+    transition: all 0.2s;
+  }
+
+  .checkbox-wrapper input[type="checkbox"]:checked {
+    background: var(--elan-text-dark);
+    border-color: var(--elan-text-dark);
+  }
+
+  .checkbox-wrapper input[type="checkbox"]:checked::after {
+    content: '';
+    position: absolute;
+    left: 5px; top: 1px;
+    width: 6px; height: 11px;
+    border: solid var(--elan-white);
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+  }
+
+  .checkbox-wrapper span {
+    font-size: 13px;
+    color: #555;
+    line-height: 1.5;
+  }
+
+  .checkbox-wrapper a {
+    color: var(--elan-text-dark);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .checkbox-wrapper a:hover { color: #245050; }
+
+  .req-note {
+    font-size: 12px;
+    color: #999;
+    margin-top: 20px;
+    margin-bottom: 16px;
+  }
+
+  .btn-cta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background: var(--elan-text-dark);
+    color: var(--elan-white);
+    border: none;
+    padding: 16px 28px;
+    font-family: var(--font-body);
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: all 0.25s ease;
+    gap: 8px;
+  }
+
+  .btn-cta:hover {
+    background: #245050;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 14px rgba(26, 58, 58, 0.3);
+  }
+
+  .btn-cta .arrow {
+    transition: transform 0.25s ease;
+    font-size: 18px;
+  }
+
+  .btn-cta:hover .arrow { transform: translateX(4px); }
+
+  /* Feedback #7: Confirmation of what happens next */
+  .form-expectation {
+    text-align: center;
+    margin-top: 14px;
+    font-size: 12.5px;
+    color: var(--elan-text-muted);
+    line-height: 1.5;
+  }
+
+  .form-expectation svg {
+    width: 13px; height: 13px;
+    vertical-align: -2px;
+    margin-right: 3px;
+    color: var(--elan-teal-bright);
+  }
+
+  #register { scroll-margin-top: 20px; }
+
+
+  /* ══════════════════════════════════════════
+     FOOTER — Feedback #5
+     ══════════════════════════════════════════ */
+  .site-footer {
+    background: var(--elan-teal-dark);
+    color: rgba(240, 232, 219, 0.5);
+    padding: clamp(2.5rem, 5vw, 3.5rem) var(--section-pad-x);
+  }
+
+  .site-footer__inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .footer-brand {
+    flex: 1;
+    min-width: 220px;
+  }
+
+  .footer-brand__logo {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 22px;
+    letter-spacing: 0.12em;
+    color: var(--elan-cream);
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+
+  .footer-brand__tagline {
+    font-size: 12px;
+    color: rgba(240, 232, 219, 0.35);
+    letter-spacing: 0.5px;
+    margin-bottom: 16px;
+  }
+
+  .footer-brand__developer {
+    font-size: 12px;
+    line-height: 1.6;
+  }
+
+  .footer-brand__developer a {
+    color: rgba(240, 232, 219, 0.6);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .footer-brand__developer a:hover { color: var(--elan-cream); }
+
+  .footer-contact {
+    text-align: right;
+    min-width: 220px;
+  }
+
+  .footer-contact__heading {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--elan-amber);
+    margin-bottom: 12px;
+  }
+
+  .footer-contact__item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 10px;
+    font-size: 13px;
+    line-height: 1.5;
+    justify-content: flex-end;
+  }
+
+  .footer-contact__item svg {
+    width: 15px; height: 15px;
+    flex-shrink: 0;
+    color: rgba(240, 232, 219, 0.3);
+    margin-top: 2px;
+  }
+
+  .footer-contact__item a {
+    color: rgba(240, 232, 219, 0.65);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .footer-contact__item a:hover { color: var(--elan-cream); }
+
+  .footer-divider {
+    width: 100%;
+    height: 1px;
+    background: rgba(240, 232, 219, 0.08);
+    margin: clamp(1.5rem, 3vw, 2rem) 0;
+  }
+
+  .footer-legal {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .footer-legal__copy {
+    font-size: 11px;
+    color: rgba(240, 232, 219, 0.3);
+  }
+
+  .footer-legal__links {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  .footer-legal__links a {
+    font-size: 11px;
+    color: rgba(240, 232, 219, 0.35);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .footer-legal__links a:hover { color: rgba(240, 232, 219, 0.6); }
+
+  .footer-reveal-btn {
+    background: none;
+    border: 1px solid rgba(240, 232, 219, 0.15);
+    border-radius: 4px;
+    color: rgba(240, 232, 219, 0.5);
+    font-family: var(--font-body);
+    font-size: 12px;
+    padding: 5px 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    letter-spacing: 0.02em;
+  }
+
+  .footer-reveal-btn:hover {
+    border-color: rgba(240, 232, 219, 0.3);
+    color: rgba(240, 232, 219, 0.7);
+  }
+
+  .footer-reveal-btn.revealed {
+    border: none;
+    padding: 0;
+  }
+
+
+  /* ══════════════════════════════════════════
+     ANIMATIONS
+     ══════════════════════════════════════════ */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+
+  /* ══════════════════════════════════════════
+     RESPONSIVE
+     ══════════════════════════════════════════ */
+  @media (max-width: 900px) {
+    .register-layout {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+
+    .register-value {
+      text-align: center;
+    }
+
+    .register-value__booklet {
+      justify-content: center;
+    }
+
+    .register-value__checklist {
+      display: inline-block;
+      text-align: left;
+    }
+
+    .register-value__urgency {
+      text-align: left;
+    }
+
+    .footer-contact { text-align: left; }
+    .footer-contact__item { justify-content: flex-start; }
+  }
+
+  @media (max-width: 767px) {
+    .hero__location { display: none; }
+    .trust-strip { flex-direction: column; }
+    .trust-strip__item {
+      border-right: none;
+      border-bottom: 1px solid rgba(240, 232, 219, 0.06);
+      padding: 18px 24px;
+    }
+    .trust-strip__item:last-child { border-bottom: none; }
+  }
+
+  @media (max-width: 580px) {
+    .register-value__booklet {
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .register-value .brochure-3d { width: 160px; }
+    .register-value .brochure-book { width: 160px; height: 208px; }
+    .brochure-cover-title { font-size: 14px; }
+
+    .field-row { flex-direction: column; gap: 0; }
+    .field-row .field { margin-bottom: 16px; }
+    .register-form { padding: 24px 20px; }
+
+    .site-footer__inner { flex-direction: column; }
+    .footer-contact { text-align: left; }
+    .footer-contact__item { justify-content: flex-start; }
+    .footer-legal { flex-direction: column; align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+
+
+<!-- ════════════════════════════════════════════════════
+     SECTION 1 — HERO
+     ════════════════════════════════════════════════════ -->
+<section class="hero">
+  <div class="hero__bg">
+    <img src="https://avid.com.au/wp-content/uploads/2026/02/hero.jpg" alt="Élan estate hero">
+  </div>
+  <div class="hero__overlay"></div>
+
+  <div class="hero__top">
+    <a href="#" class="hero__logo">ÉLAN</a>
+    <div class="hero__location">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"/>
+        <circle cx="12" cy="10" r="3"/>
+      </svg>
+      Warner, Moreton Bay
+    </div>
+  </div>
+
+  <div class="hero__content">
+    <p class="hero__eyebrow">welcome to Élan</p>
+    <h1 class="hero__headline">A new kind of<br>neighbourhood<br>in Warner</h1>
+    <p class="hero__sub">New homes designed for the way you want to live — with a fixed price contract and no progress payments.</p>
+    <p class="hero__price">Home and land packages from $980K*</p>
+    <!-- Feedback #1 & #3: Unified to "release plan" terminology -->
+    <a href="#register" class="hero__cta">
+      Get the release plan
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M3 8h10M9 4l4 4-4 4"/>
+      </svg>
+    </a>
+  </div>
+
+  <span class="hero__disclaimer">Artist Impression Only</span>
+</section>
+
+<!-- Trust strip -->
+<div class="trust-strip">
+  <div class="trust-strip__item">
+    <div class="trust-strip__icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M9 12l2 2 4-4"/><rect x="3" y="4" width="18" height="16" rx="2"/>
+      </svg>
+    </div>
+    <div class="trust-strip__text">
+      <strong>Fixed price contract</strong>
+      Low deposit, no progress payments
+    </div>
+  </div>
+  <div class="trust-strip__item">
+    <div class="trust-strip__icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 3v3m0 12v3M3 12h3m12 0h3"/><circle cx="12" cy="12" r="4"/>
+      </svg>
+    </div>
+    <div class="trust-strip__text">
+      <strong>45% open space</strong>
+      Parks, trails and community at your door
+    </div>
+  </div>
+  <div class="trust-strip__item">
+    <div class="trust-strip__icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+        <polyline points="9,22 9,12 15,12 15,22"/>
+      </svg>
+    </div>
+    <div class="trust-strip__text">
+      <strong>Villaworld Homes by AVID</strong>
+      Award-winning design, three colour schemes
+    </div>
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════════════════════════
+     SECTION 2 — SLIDER
+     ════════════════════════════════════════════════════ -->
+<section class="slider-section">
+  <div class="slider-section__inner">
+    <div class="slider-section__header">
+      <span class="slider-section__eyebrow">Why Élan</span>
+      <h2 class="slider-section__title">A community designed around how you live</h2>
+    </div>
+
+    <div id="elan-slider" class="elan-slider splide" aria-label="Why choose Élan community features">
+      <div class="splide__track">
+        <div class="splide__list">
+
+          <div class="splide__slide">
+            <div class="slide-card">
+              <div class="slide-card__image-wrap">
+                <img src="https://elan.avid.com.au/wp-content/uploads/2025/09/elan-hero2-1024x683.jpg"
+                     alt="Modern Villaworld home exterior with landscaping included"
+                     class="slide-card__image" loading="lazy">
+              </div>
+              <div class="slide-card__body">
+                <h4 class="slide-card__heading">Your building journey made simple</h4>
+                <p class="slide-card__text">Every Villaworld Home comes complete with landscaping, flooring and window coverings — fixed price, no surprises.</p>
+                <!-- Feedback #1: Consistent "release plan" -->
+                <a href="#register" class="slide-card__cta">
+                  Get the release plan
+                  <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="splide__slide">
+            <div class="slide-card">
+              <div class="slide-card__image-wrap">
+                <img src="https://elan.avid.com.au/wp-content/uploads/2026/01/central-living-scaled.jpg"
+                     alt="Aerial view of Élan estate showing proximity to Brisbane and amenities"
+                     class="slide-card__image" loading="lazy">
+              </div>
+              <div class="slide-card__body">
+                <h4 class="slide-card__heading">Central living in Moreton Bay</h4>
+                <p class="slide-card__text">Access all the amenities you need while being just 30 minutes from Brisbane and close to the Sunshine Coast.</p>
+                <a href="#register" class="slide-card__cta">
+                  Get the release plan
+                  <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="splide__slide">
+            <div class="slide-card">
+              <div class="slide-card__image-wrap">
+                <img src="https://elan.avid.com.au/wp-content/uploads/2026/01/estate-park-1a-scaled.jpg"
+                     alt="Élan Parklands with walking trails and playground spaces"
+                     class="slide-card__image" loading="lazy">
+              </div>
+              <div class="slide-card__body">
+                <h4 class="slide-card__heading">45% green space to explore</h4>
+                <p class="slide-card__text">Enjoy the extensive Élan Parklands with playgrounds, walking trails and cycling paths woven throughout the community.</p>
+                <a href="#register" class="slide-card__cta">
+                  Get the release plan
+                  <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <ul class="splide__pagination"></ul>
+    </div>
+    <p class="swipe-hint">Swipe to explore →</p>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════
+     SECTION 3 — COMBINED FORM + BROCHURE
+     Feedback #2: Brochure + checklist alongside form
+     Feedback #4: Urgency nudge added
+     Feedback #6: Placeholder on dropdown
+     Feedback #7: Post-submit expectation text
+     ════════════════════════════════════════════════════ -->
+<section class="register-section" id="register">
+  <div class="register-section__inner">
+
+    <div class="register-section__header">
+      <p class="register-section__eyebrow">Élan — Warner</p>
+      <h2 class="register-section__title">Get the Élan Release Plan</h2>
+    </div>
+
+    <div class="register-layout">
+
+      <!-- Left: Value proposition with brochure -->
+      <div class="register-value">
+        <div class="register-value__booklet">
+          <div class="brochure-3d">
+            <div class="brochure-book">
+              <div class="brochure-pages"></div>
+              <div class="brochure-cover">
+                <img class="brochure-cover-image" src="https://avid.com.au/wp-content/uploads/2026/02/elan-brochure-cover.jpg" alt="Élan Release Plan cover">
+                <div class="brochure-top-bar">
+                  <span class="brochure-avid-mark">AVID Property Group</span>
+                </div>
+                <div class="brochure-cover-overlay">
+                  <div class="brochure-cover-title">Élan<br>Release Plan</div>
+                  <div class="brochure-cover-divider"></div>
+                  <div class="brochure-cover-sub">Warner, QLD</div>
+                </div>
+              </div>
+              <div class="brochure-shadow"></div>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="register-value__checklist-title">What's inside</h3>
+            <ul class="register-value__checklist">
+              <li>Full release plan &amp; stage map</li>
+              <li>Lot sizes &amp; dimensions</li>
+              <li>Pricing guidance</li>
+              <li>Current availability</li>
+              <li>Estate masterplan</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Feedback #4: Urgency / scarcity nudge -->
+        <div class="register-value__urgency">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <polyline points="12 6 12 12 16 14"/>
+          </svg>
+          <p><strong>Limited lots available</strong> in the current release. Register now to secure access to updated pricing and availability before the next stage opens.</p>
+        </div>
+      </div>
+
+      <!-- Right: Registration form -->
+      <div class="register-form">
+        <div class="field-row">
+          <div class="field">
+            <label>First Name <span class="req">*</span></label>
+            <input type="text" placeholder="First name">
+          </div>
+          <div class="field">
+            <label>Last Name <span class="req">*</span></label>
+            <input type="text" placeholder="Last name">
+          </div>
+        </div>
+        <div class="field">
+          <label>Email <span class="req">*</span></label>
+          <input type="email" placeholder="you@example.com">
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label>Phone <span class="req">*</span></label>
+            <input type="tel" placeholder="04XX XXX XXX">
+          </div>
+          <div class="field">
+            <label>Postcode <span class="req">*</span></label>
+            <input type="text" placeholder="e.g. 4500">
+          </div>
+        </div>
+        <div class="field">
+          <label>Timeframe to Purchase <span class="req">*</span></label>
+          <!-- Feedback #6: Neutral placeholder instead of defaulting to a value -->
+          <select id="timeframe-select">
+            <option value="" disabled selected>Select your timeframe</option>
+            <option value="0-3">0 – 3 months</option>
+            <option value="3-6">3 – 6 months</option>
+            <option value="6-12">6 – 12 months</option>
+            <option value="12+">12+ months</option>
+          </select>
+        </div>
+        <div class="privacy-section">
+          <p class="privacy-label">Privacy Policy <span class="req">*</span></p>
+          <label class="checkbox-wrapper">
+            <input type="checkbox">
+            <span>I agree to the <a href="https://www.avid.com.au/privacy-policy" target="_blank">privacy policy</a>. Please view our privacy policy for more information.</span>
+          </label>
+        </div>
+        <p class="req-note">* Required fields.</p>
+        <button class="btn-cta">Get the Release Plan <span class="arrow">→</span></button>
+        <!-- Feedback #7: Set expectations for what happens after submit -->
+        <p class="form-expectation">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          You'll receive the Release Plan as a viewable document right away, plus updates on upcoming releases.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════
+     FOOTER — Feedback #5
+     ════════════════════════════════════════════════════ -->
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <div class="footer-brand">
+      <div class="footer-brand__logo">ÉLAN</div>
+      <p class="footer-brand__tagline">A new neighbourhood by AVID Property Group</p>
+      <p class="footer-brand__developer">Developed by <a href="https://www.avid.com.au" target="_blank">AVID Property Group</a><br>We bring people together.</p>
+    </div>
+    <div class="footer-contact">
+      <p class="footer-contact__heading">Sales &amp; Enquiries</p>
+      <div class="footer-contact__item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <button class="footer-reveal-btn" data-reveal="phone" data-value="1800 001 900" data-href="tel:1800001900">Show phone number</button>
+      </div>
+      <div class="footer-contact__item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <button class="footer-reveal-btn" data-reveal="email" data-value="elan@avid.com.au" data-href="mailto:elan@avid.com.au">Show email address</button>
+      </div>
+      <div class="footer-contact__item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="3"/></svg>
+        <span>Sales Display, Warner&nbsp;QLD&nbsp;4500</span>
+      </div>
+    </div>
+
+    <div class="footer-divider"></div>
+
+    <div class="footer-legal">
+      <p class="footer-legal__copy">&copy; 2026 AVID Property Group. All rights reserved.</p>
+      <div class="footer-legal__links">
+        <a href="https://www.avid.com.au/privacy-policy" target="_blank">Privacy Policy</a>
+        <a href="https://www.avid.com.au/terms-and-conditions" target="_blank">Terms &amp; Conditions</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<!-- Splide JS -->
+<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+<script>
+  // Splide slider init
+  new Splide('#elan-slider', {
+    type:          'loop',
+    perPage:       3,
+    perMove:       1,
+    gap:           '1.5rem',
+    autoplay:      true,
+    interval:      6000,
+    speed:         600,
+    easing:        'cubic-bezier(0.25, 1, 0.5, 1)',
+    pauseOnHover:  true,
+    pauseOnFocus:  true,
+    pagination:    true,
+    arrows:        true,
+    drag:          true,
+    mediaQuery:    'max',
+    breakpoints: {
+      1024: {
+        perPage: 2,
+        gap: '1.25rem',
+      },
+      767: {
+        type:    'slide',
+        perPage: 1,
+        gap:     '1rem',
+        drag:    true,
+        arrows:  false,
+        padding: { right: '15%' },
+      }
+    }
+  }).mount();
+
+  // Click-to-reveal for footer contact details
+  document.querySelectorAll('.footer-reveal-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var link = document.createElement('a');
+      link.href = this.dataset.href;
+      link.textContent = this.dataset.value;
+      link.style.color = 'rgba(240, 232, 219, 0.65)';
+      link.style.textDecoration = 'none';
+      link.style.transition = 'color 0.2s';
+      link.addEventListener('mouseenter', function() { this.style.color = 'rgba(240, 232, 219, 0.9)'; });
+      link.addEventListener('mouseleave', function() { this.style.color = 'rgba(240, 232, 219, 0.65)'; });
+      this.replaceWith(link);
+    });
+  });
+  const sel = document.getElementById('timeframe-select');
+  sel.addEventListener('change', function() {
+    this.classList.toggle('has-value', this.value !== '');
+  });
+</script>
+
+</body>
+</html>
